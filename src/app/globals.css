@@ -5,11 +5,28 @@
 }
 
 :root {
-
+	--bg: #1c1a17;
+	--bg-deep: #141210;
+	--ink: #efe9dc;
+	--ink-dim: rgba(239, 233, 220, 0.62);
+	--ink-faint: rgba(239, 233, 220, 0.4);
+	--gold: #b6905a;
+	--gold-soft: rgba(182, 144, 90, 0.35);
+	--line: rgba(239, 233, 220, 0.14);
+	--sans: "Jost", sans-serif;
 }
-
-
 
 html {
 	scroll-behavior: smooth;
+}
+
+body {
+	background: var(--bg);
+	color: var(--ink);
+	font-family: var(--sans);
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
 }
