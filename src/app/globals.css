@@ -14,6 +14,21 @@
 	--gold-soft: rgba(182, 144, 90, 0.35);
 	--line: rgba(239, 233, 220, 0.14);
 	--sans: "Jost", sans-serif;
+	--voice-font: "Cormorant Garamond", serif;
+
+	/* Layout tokens live here because the header and footer are rendered by the
+	   root layout, outside the page wrapper, and need the same measurements. */
+	--maxw: 1180px;
+	--gutter: 32px;
+	--header-h: 70px;
+	--section-pad: clamp(72px, 9vw, 120px);
+}
+
+@media (max-width: 760px) {
+	:root {
+		--gutter: 20px;
+		--header-h: 104px;
+	}
 }
 
 html {
@@ -21,12 +36,29 @@ html {
 }
 
 body {
+	min-height: 100vh;
 	background: var(--bg);
 	color: var(--ink);
 	font-family: var(--sans);
+	font-weight: 300;
+	line-height: 1.65;
 }
 
 a {
 	color: inherit;
 	text-decoration: none;
+}
+
+a:focus-visible {
+	outline: 1px solid var(--gold);
+	outline-offset: 4px;
+}
+
+:where(img, svg) {
+	display: block;
+	max-width: 100%;
+}
+
+:where(main, section, header, footer) {
+	scroll-margin-top: var(--header-h);
 }

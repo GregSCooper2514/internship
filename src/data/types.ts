@@ -2,7 +2,7 @@ export interface Showroom {
 	city: string;
 	location: string;
 	telephone: string;
-};
+}
 
 export type CollectionSlug = "venedik" | "morocco" | "titian" | "nichole" | "greko" | "ametis";
 

@@ -6,25 +6,6 @@ import { showrooms } from "@/data/showrooms";
 import type { Collection, Showroom } from "@/data/types";
 import styles from "./page.module.css";
 
-function Header() {
-	return (
-		<header className={styles.header}>
-			<div className={styles.headerInner}>
-				<a className={styles.logo} href="https://www.origamimobilya.com/" target="_blank" rel="noopener noreferrer">
-					origami
-				</a>
-				<nav className={styles.nav}>
-					<a href="#top">Home</a>
-					<a href="#collections">Collections</a>
-					<a href="#about">About the Catalogue</a>
-					<a href="#showrooms">Showrooms</a>
-					<a href="#contact">Contact</a>
-				</nav>
-			</div>
-		</header>
-	);
-}
-
 function Hero() {
 	return (
 		<section className={styles.hero}>
@@ -162,62 +143,9 @@ function Showrooms() {
 	);
 }
 
-function Footer() {
-	return (
-		<footer className={styles.footer} id="contact">
-			<div className={styles.footerGrid}>
-				<div>
-					<a className={styles.logo} href="https://www.origamimobilya.com/" target="_blank" rel="noopener noreferrer">
-						origami
-					</a>
-					<p>A new perspective on luxury.</p>
-				</div>
-				<div>
-					<h4>Navigate</h4>
-					<a className={styles.footerLink} href="#top">
-						Home
-					</a>
-					<a className={styles.footerLink} href="#collections">
-						Collections
-					</a>
-					<a className={styles.footerLink} href="#about">
-						The catalogue
-					</a>
-					<a className={styles.footerLink} href="#showrooms">
-						Showrooms
-					</a>
-				</div>
-				<div>
-					<h4>Showrooms</h4>
-					{showrooms.map((showroom) => (
-						<p key={showroom.city + showroom.location}>
-							{showroom.city} — {showroom.location}
-						</p>
-					))}
-				</div>
-				<div>
-					<h4>Follow</h4>
-					<a
-						className={styles.footerLink}
-						href="https://www.instagram.com/origamimobilya/"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Instagram — @origamimobilya
-					</a>
-					<a className={styles.footerLink} href="mailto:hello@origamimobilya.com">
-						hello@origamimobilya.com
-					</a>
-				</div>
-			</div>
-		</footer>
-	);
-}
-
 export default function Home() {
 	return (
 		<div className={styles.page}>
-			<Header />
 			<main id="top">
 				<Hero />
 				<Intro />
@@ -225,7 +153,6 @@ export default function Home() {
 				<About />
 				<Showrooms />
 			</main>
-			<Footer />
 		</div>
 	);
 }
