@@ -1,6 +1,6 @@
-import { showrooms } from "@/data/showrooms";
-import styles from "./site-footer.module.css";
 import Link from "next/link";
+import { getShowrooms } from "@/data/showrooms";
+import styles from "./site-footer.module.css";
 
 export function Footer() {
 	return (
@@ -29,7 +29,7 @@ export function Footer() {
 				</div>
 				<div>
 					<h4>Showrooms</h4>
-					{showrooms.map((showroom) => (
+					{getShowrooms().map((showroom) => (
 						<p key={showroom.city + showroom.location}>
 							{showroom.city} — {showroom.location}
 						</p>

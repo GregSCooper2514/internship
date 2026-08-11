@@ -2,8 +2,7 @@ import type { Product } from "./types";
 
 const img = (n: number) => `/images/catalogue/page-${String(n).padStart(2, "0")}.jpg`;
 
-const imgSet = (n: number) =>
-	["a", "b", "c"].map((l) => `/images/catalogue/page-${String(n).padStart(2, "0")}-${l}.jpg`);
+const imgSet = (n: number) => ["a", "b", "c"].map((l) => `/images/catalogue/page-${String(n).padStart(2, "0")}-${l}.jpg`);
 
 export const products: Product[] = [
 	// Venedik
@@ -84,5 +83,6 @@ export const products: Product[] = [
 ];
 
 export const getProduct = (id: string) => products.find((p) => p.id === id);
+export const getProducts = () => products;
 
 export const getProductsByCollection = (collection: string) => products.filter((p) => p.collection === collection);

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { collections } from "@/data/collections";
-import { showrooms } from "@/data/showrooms";
+import { getCollections } from "@/data/collections";
+import { getShowrooms } from "@/data/showrooms";
 import type { Collection, Showroom } from "@/data/types";
 import styles from "./page.module.css";
 
@@ -79,7 +79,7 @@ function Collections() {
 				</p>
 			</div>
 			<div className={styles.collectionGrid}>
-				{collections.map((collection) => (
+				{getCollections().map((collection) => (
 					<CollectionTile key={collection.slug} collection={collection} />
 				))}
 			</div>
@@ -135,7 +135,7 @@ function Showrooms() {
 				<p>Every collection is dressed in full room settings — worth seeing in person.</p>
 			</div>
 			<div className={styles.showroomGrid}>
-				{showrooms.map((showroom) => (
+				{getShowrooms().map((showroom) => (
 					<ShowroomTile key={showroom.city + showroom.location} showroom={showroom} />
 				))}
 			</div>

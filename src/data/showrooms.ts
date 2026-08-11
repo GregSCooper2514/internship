@@ -17,3 +17,5 @@ export const showrooms: Showroom[] = [
 		telephone: "+902163653322",
 	},
 ];
+
+export const getShowrooms = () => showrooms;

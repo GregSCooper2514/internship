@@ -1,8 +1,7 @@
 import type { Collection } from "./types";
 
 const img = (n: number) => `/images/catalogue/page-${String(n).padStart(2, "0")}.jpg`;
-const imgSet = (n: number) =>
-	["a", "b", "c"].map((l) => `/images/catalogue/page-${String(n).padStart(2, "0")}-${l}.jpg`);
+const imgSet = (n: number) => ["a", "b", "c"].map((l) => `/images/catalogue/page-${String(n).padStart(2, "0")}-${l}.jpg`);
 
 export const collections: Collection[] = [
 	{
@@ -68,3 +67,4 @@ export const collections: Collection[] = [
 ];
 
 export const getCollection = (slug: string) => collections.find((c) => c.slug === slug);
+export const getCollections = () => collections;
