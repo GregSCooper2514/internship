@@ -1,14 +1,21 @@
-import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import type { CSSProperties } from "react";
 import { Carousel } from "@/components/carousel";
-import { getCollection } from "@/data/collections";
+import { getCollection, getCollections } from "@/data/collections";
 import { getProductsByCollection } from "@/data/products";
 import type { Collection, Product } from "@/data/types";
 import styles from "./page.module.css";
 
-function CollectionGallery({ collection }: { collection: Collection }) {
+export async function generateStaticParams() {
+	const collections = getCollections();
+	return collections.map((collection) => ({
+		slug: collection.slug,
+	}));
+}
+
+function CollectionGallery({ collection }: { collection: Collection; }) {
 	return (
 		<section className={styles.gallery}>
 			<div className={styles.sectionHeader}>
@@ -25,7 +32,7 @@ function CollectionGallery({ collection }: { collection: Collection }) {
 	);
 }
 
-function ProductCard({ product }: { product: Product }) {
+function ProductCard({ product }: { product: Product; }) {
 	return (
 		<article className={styles.productCard}>
 			<Carousel images={product.images} alt={`${product.name} Image`} width={300} height={300} />
@@ -34,7 +41,7 @@ function ProductCard({ product }: { product: Product }) {
 	);
 }
 
-export default async function CollectionPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function CollectionPage({ params }: { params: Promise<{ slug: string; }>; }) {
 	const { slug } = await params;
 	const collection = getCollection(slug);
 	const products = getProductsByCollection(slug);
