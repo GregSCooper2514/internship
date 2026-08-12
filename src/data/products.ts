@@ -2,7 +2,8 @@ import type { Product } from "./types";
 
 const img = (n: number) => `/images/catalogue/page-${String(n).padStart(2, "0")}.jpg`;
 
-const imgSet = (n: number) => ["a", "b", "c"].map((l) => `/images/catalogue/page-${String(n).padStart(2, "0")}-${l}.jpg`);
+const imgSet = (n: number) =>
+	["a", "b", "c"].map((l) => `/images/catalogue/page-${String(n).padStart(2, "0")}-${l}.jpg`);
 
 export const products: Product[] = [
 	// Venedik
