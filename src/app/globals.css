@@ -22,6 +22,12 @@
 	--gutter: 32px;
 	--header-h: 70px;
 	--section-pad: clamp(72px, 9vw, 120px);
+
+	/* Backdrop shared by every route wrapper, so pages sit on one continuous surface. */
+	--page-bg:
+		radial-gradient(ellipse at 15% 10%, rgba(255, 255, 255, 0.035), transparent 55%),
+		radial-gradient(ellipse at 85% 75%, rgba(0, 0, 0, 0.4), transparent 55%),
+		linear-gradient(165deg, #211e1a 0%, #17150f 55%, #1c1815 100%);
 }
 
 @media (max-width: 760px) {

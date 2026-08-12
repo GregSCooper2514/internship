@@ -1,9 +1,6 @@
 .page {
 	position: relative;
-	background:
-		radial-gradient(ellipse at 15% 10%, rgba(255, 255, 255, 0.035), transparent 55%),
-		radial-gradient(ellipse at 85% 75%, rgba(0, 0, 0, 0.4), transparent 55%),
-		linear-gradient(165deg, #211e1a 0%, #17150f 55%, #1c1815 100%);
+	background: var(--page-bg);
 }
 
 .hero,
