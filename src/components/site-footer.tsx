@@ -20,10 +20,10 @@ export function Footer() {
 					<Link className={styles.footerLink} href="/collections">
 						Collections
 					</Link>
-					<Link className={styles.footerLink} href="/#about">
-						The catalogue
+					<Link className={styles.footerLink} href="/about">
+						About The catalogue
 					</Link>
-					<Link className={styles.footerLink} href="/#showrooms">
+					<Link className={styles.footerLink} href="/contact#showrooms">
 						Showrooms
 					</Link>
 				</div>
@@ -45,8 +45,8 @@ export function Footer() {
 					>
 						Instagram — @origamimobilya
 					</a>
-					<a className={styles.footerLink} href="mailto:hello@origamimobilya.com">
-						hello@origamimobilya.com
+					<a className={styles.footerLink} href="mailto:bilgi@origamimobilya.com">
+						bilgi@origamimobilya.com
 					</a>
 				</div>
 			</div>

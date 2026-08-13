@@ -11,8 +11,8 @@ export function Header() {
 				<nav className={styles.nav}>
 					<Link href="/#top">Home</Link>
 					<Link href="/collections">Collections</Link>
-					<Link href="/#about">About the Catalogue</Link>
-					<Link href="/#showrooms">Showrooms</Link>
+					<Link href="/about">About the Catalogue</Link>
+					<Link href="/contact#showrooms">Showrooms</Link>
 					<Link href="/contact">Contact</Link>
 				</nav>
 			</div>
