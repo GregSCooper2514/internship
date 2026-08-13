@@ -10,7 +10,6 @@ function Hero() {
 	return (
 		<section className={styles.hero}>
 			<div className={styles.heroContent}>
-				<p className={styles.eyebrow}>Since 2018 — timeless lines</p>
 				<h1 className={styles.heroTitle}>origami</h1>
 				<p className={styles.voice}>A new perspective on luxury.</p>
 				<p className={styles.heroDesc}>
@@ -52,7 +51,7 @@ function Intro() {
 	);
 }
 
-function CollectionTile({ collection }: { collection: Collection }) {
+function CollectionTile({ collection }: { collection: Collection; }) {
 	return (
 		<article className={styles.collectionTile} style={{ "--accent": collection.accent } as CSSProperties}>
 			<h3>{collection.name}</h3>
@@ -111,7 +110,7 @@ function About() {
 	);
 }
 
-function ShowroomTile({ showroom }: { showroom: Showroom }) {
+function ShowroomTile({ showroom }: { showroom: Showroom; }) {
 	return (
 		<div className={styles.showroomTile}>
 			<p>{showroom.city}</p>
@@ -145,14 +144,12 @@ function Showrooms() {
 
 export default function Home() {
 	return (
-		<div className={styles.page}>
-			<main id="top">
-				<Hero />
-				<Intro />
-				<Collections />
-				<About />
-				<Showrooms />
-			</main>
-		</div>
+		<main id="top" className={styles.page}>
+			<Hero />
+			<Intro />
+			<Collections />
+			<About />
+			<Showrooms />
+		</main>
 	);
 }

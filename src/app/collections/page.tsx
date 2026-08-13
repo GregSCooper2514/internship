@@ -6,7 +6,7 @@ import { getProductsByCollection } from "@/data/products";
 import type { Collection } from "@/data/types";
 import styles from "./page.module.css";
 
-function CollectionCard({ collection }: { collection: Collection }) {
+function CollectionCard({ collection }: { collection: Collection; }) {
 	const productCount: number = getProductsByCollection(collection.slug).length;
 
 	return (
@@ -31,21 +31,19 @@ function CollectionCard({ collection }: { collection: Collection }) {
 
 export default function CollectionsPage() {
 	return (
-		<div className={styles.page}>
-			<main>
-				<header className={styles.pageHeader}>
-					<p className={styles.eyebrow}>The 2018 Catalogue</p>
-					<h1>Collections</h1>
-					<p className={styles.lede}>Six collections from the Origami 2018 catalogue.</p>
-				</header>
-				<section className={styles.catalogue}>
-					<div className={styles.grid}>
-						{getCollections().map((collection) => (
-							<CollectionCard key={collection.slug} collection={collection} />
-						))}
-					</div>
-				</section>
-			</main>
-		</div>
+		<main className={styles.page}>
+			<header className={styles.pageHeader}>
+				<p className={styles.eyebrow}>The 2018 Catalogue</p>
+				<h1>Collections</h1>
+				<p className={styles.lede}>Six collections from the Origami 2018 catalogue.</p>
+			</header>
+			<section className={styles.catalogue}>
+				<div className={styles.grid}>
+					{getCollections().map((collection) => (
+						<CollectionCard key={collection.slug} collection={collection} />
+					))}
+				</div>
+			</section>
+		</main>
 	);
 }
