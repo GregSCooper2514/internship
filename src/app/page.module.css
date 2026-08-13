@@ -146,8 +146,7 @@
 	}
 }
 
-.collectionHeader,
-.showroomHeader {
+.collectionHeader {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
@@ -161,10 +160,6 @@
 		color: var(--ink-dim);
 		text-wrap: pretty;
 	}
-}
-
-.showroomHeader {
-	margin-bottom: 48px;
 }
 
 .sectionTitle {
@@ -278,8 +273,7 @@
 	}
 }
 
-.collectionLink,
-.showroomLink {
+.collectionLink {
 	display: inline-flex;
 	align-items: center;
 	align-self: flex-start;
@@ -351,54 +345,5 @@
 		height: 100%;
 		object-fit: cover;
 		filter: saturate(0.85) contrast(1.05);
-	}
-}
-
-.showrooms {
-	padding-block: var(--section-pad);
-	border-top: 1px solid var(--line);
-}
-
-.showroomGrid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
-	gap: 1px;
-	background: var(--line);
-}
-
-.showroomTile {
-	display: flex;
-	flex-direction: column;
-	background: var(--bg-deep);
-	padding: 34px 28px;
-
-	& > p:first-child {
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		font-size: 11px;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		color: var(--ink-faint);
-
-		&::before {
-			content: "";
-			width: 26px;
-			height: 1px;
-			background: var(--gold-soft);
-		}
-	}
-
-	& h3 {
-		font-size: 17px;
-		font-weight: 400;
-		letter-spacing: 0.03em;
-		margin: 12px 0 6px;
-	}
-
-	& p {
-		font-size: 13px;
-		color: var(--ink-dim);
-		margin-bottom: 18px;
 	}
 }

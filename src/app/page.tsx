@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
+import { Showrooms } from "@/components/showrooms";
 import { getCollections } from "@/data/collections";
-import { getShowrooms } from "@/data/showrooms";
-import type { Collection, Showroom } from "@/data/types";
+import type { Collection } from "@/data/types";
 import styles from "./page.module.css";
 
 function Hero() {
@@ -51,7 +51,7 @@ function Intro() {
 	);
 }
 
-function CollectionTile({ collection }: { collection: Collection; }) {
+function CollectionTile({ collection }: { collection: Collection }) {
 	return (
 		<article className={styles.collectionTile} style={{ "--accent": collection.accent } as CSSProperties}>
 			<h3>{collection.name}</h3>
@@ -105,38 +105,6 @@ function About() {
 				<a className={styles.heroCtaPrimary} href="#collections">
 					Explore collections
 				</a>
-			</div>
-		</section>
-	);
-}
-
-function ShowroomTile({ showroom }: { showroom: Showroom; }) {
-	return (
-		<div className={styles.showroomTile}>
-			<p>{showroom.city}</p>
-			<h3>{showroom.location}</h3>
-			<p>{showroom.telephone}</p>
-			<a className={styles.showroomLink} href={`tel:${showroom.telephone}`}>
-				Call this showroom
-			</a>
-		</div>
-	);
-}
-
-function Showrooms() {
-	return (
-		<section className={styles.showrooms} id="showrooms">
-			<div className={styles.showroomHeader}>
-				<div>
-					<p className={styles.sectionEyebrow}>Visit Us</p>
-					<h2 className={styles.sectionTitle}>Three Showrooms</h2>
-				</div>
-				<p>Every collection is dressed in full room settings — worth seeing in person.</p>
-			</div>
-			<div className={styles.showroomGrid}>
-				{getShowrooms().map((showroom) => (
-					<ShowroomTile key={showroom.city + showroom.location} showroom={showroom} />
-				))}
 			</div>
 		</section>
 	);
