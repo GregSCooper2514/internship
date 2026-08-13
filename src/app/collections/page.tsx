@@ -6,7 +6,7 @@ import { getProductsByCollection } from "@/data/products";
 import type { Collection } from "@/data/types";
 import styles from "./page.module.css";
 
-function CollectionCard({ collection }: { collection: Collection; }) {
+function CollectionCard({ collection }: { collection: Collection }) {
 	const productCount: number = getProductsByCollection(collection.slug).length;
 
 	return (

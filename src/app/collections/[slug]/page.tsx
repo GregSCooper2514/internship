@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 	}));
 }
 
-function CollectionGallery({ collection }: { collection: Collection; }) {
+function CollectionGallery({ collection }: { collection: Collection }) {
 	return (
 		<section className={styles.gallery}>
 			<div className={styles.sectionHeader}>
@@ -32,7 +32,7 @@ function CollectionGallery({ collection }: { collection: Collection; }) {
 	);
 }
 
-function ProductCard({ product }: { product: Product; }) {
+function ProductCard({ product }: { product: Product }) {
 	return (
 		<article className={styles.productCard}>
 			<Carousel images={product.images} alt={`${product.name} Image`} width={300} height={300} />
@@ -41,7 +41,7 @@ function ProductCard({ product }: { product: Product; }) {
 	);
 }
 
-export default async function CollectionPage({ params }: { params: Promise<{ slug: string; }>; }) {
+export default async function CollectionPage({ params }: { params: Promise<{ slug: string }> }) {
 	const { slug } = await params;
 	const collection = getCollection(slug);
 	const products = getProductsByCollection(slug);
