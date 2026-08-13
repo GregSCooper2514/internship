@@ -13,14 +13,12 @@ export interface Collection {
 	description: string;
 	accent: string;
 	heroImage: string;
-	/* Extra photos for this collection with no single named product. */
-	galleryImages: string[];
+	galleryImages: string[]; // Extra photos for this collection with no single named product.
 }
 
 export interface Product {
 	id: string;
 	name: string;
 	collection: CollectionSlug;
-	/* One or more photos of this piece. */
-	images: string[];
+	images: string[]; // One or more photos of this piece.
 }

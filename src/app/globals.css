@@ -15,15 +15,10 @@
 	--line: rgba(239, 233, 220, 0.14);
 	--sans: "Jost", sans-serif;
 	--voice-font: "Cormorant Garamond", serif;
-
-	/* Layout tokens live here because the header and footer are rendered by the
-	   root layout, outside the page wrapper, and need the same measurements. */
 	--maxw: 1180px;
 	--gutter: 32px;
 	--header-h: 70px;
 	--section-pad: clamp(72px, 9vw, 120px);
-
-	/* Backdrop shared by every route wrapper, so pages sit on one continuous surface. */
 	--page-bg:
 		radial-gradient(ellipse at 15% 10%, rgba(255, 255, 255, 0.035), transparent 55%),
 		radial-gradient(ellipse at 85% 75%, rgba(0, 0, 0, 0.4), transparent 55%),

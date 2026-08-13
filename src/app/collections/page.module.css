@@ -55,7 +55,6 @@
 }
 
 .card {
-	/* Overridden per collection from the data layer. */
 	--accent: #8f8878;
 
 	position: relative;
@@ -87,7 +86,6 @@
 		transition: transform 0.6s ease;
 	}
 
-	/* Ties the photo back to the collection's accent without tinting the whole tile. */
 	&::after {
 		content: "";
 		position: absolute;
