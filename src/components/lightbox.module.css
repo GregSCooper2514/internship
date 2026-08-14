@@ -8,16 +8,20 @@
 	background: transparent;
 	color: var(--ink);
 	overflow: hidden;
-}
 
-.dialog::backdrop {
-	background: rgba(15, 13, 11, 0.92);
-	backdrop-filter: blur(6px);
-}
+	&::backdrop {
+		background: rgba(15, 13, 11, 0.92);
+		backdrop-filter: blur(6px);
+	}
 
-.dialog[open],
-.dialog[open]::backdrop {
-	animation: fade-in 0.2s ease;
+	&[open],
+	&[open]::backdrop {
+		animation: fade-in 0.2s ease;
+
+		@media (prefers-reduced-motion: reduce) {
+			animation: none;
+		}
+	}
 }
 
 @keyframes fade-in {
@@ -96,14 +100,14 @@
 	height: 46px;
 	padding-bottom: 4px;
 	font-size: 26px;
-}
 
-.prev {
-	left: clamp(8px, 2vw, 28px);
-}
+	&.prev {
+		left: clamp(8px, 2vw, 28px);
+	}
 
-.next {
-	right: clamp(8px, 2vw, 28px);
+	&.next {
+		right: clamp(8px, 2vw, 28px);
+	}
 }
 
 .close {
@@ -121,11 +125,4 @@
 	font-size: 13px;
 	letter-spacing: 0.16em;
 	text-transform: uppercase;
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.dialog[open],
-	.dialog[open]::backdrop {
-		animation: none;
-	}
 }

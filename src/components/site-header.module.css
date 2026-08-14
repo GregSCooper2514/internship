@@ -19,35 +19,13 @@
 	padding-inline: var(--gutter);
 	padding-block: 18px;
 
-	@media (max-width: 760px) {
-		justify-content: center;
-		padding-block: 14px;
-	}
-}
-
-.logo {
-	font-size: 20px;
-	letter-spacing: 0.14em;
-	font-weight: 500;
-	text-transform: lowercase;
-	white-space: nowrap;
-	color: var(--ink);
-	transition: color 0.2s ease;
-
-	&:hover {
-		color: var(--gold);
-	}
-}
-
-.nav {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 10px 36px;
-	font-size: 13px;
-	letter-spacing: 0.06em;
-
-	& a {
-		color: var(--ink-dim);
+	& .logo {
+		font-size: 20px;
+		letter-spacing: 0.14em;
+		font-weight: 500;
+		text-transform: lowercase;
+		white-space: nowrap;
+		color: var(--ink);
 		transition: color 0.2s ease;
 
 		&:hover {
@@ -55,9 +33,31 @@
 		}
 	}
 
+	& .nav {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px 36px;
+		font-size: 13px;
+		letter-spacing: 0.06em;
+
+		& a {
+			color: var(--ink-dim);
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: var(--gold);
+			}
+		}
+
+		@media (max-width: 760px) {
+			justify-content: center;
+			gap: 8px 20px;
+			font-size: 12px;
+		}
+	}
+
 	@media (max-width: 760px) {
 		justify-content: center;
-		gap: 8px 20px;
-		font-size: 12px;
+		padding-block: 14px;
 	}
 }

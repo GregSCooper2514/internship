@@ -14,42 +14,10 @@
 	padding-inline: var(--gutter);
 }
 
-.hero {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 70px;
-	align-items: center;
-	padding-block: clamp(48px, 7vw, 90px) var(--section-pad);
-
-	@media (max-width: 860px) {
-		grid-template-columns: 1fr;
-		gap: 36px;
-	}
-}
-
-.backLink {
-	display: inline-flex;
-	align-items: center;
-	gap: 8px;
-	margin-bottom: 26px;
-	font-size: 11px;
-	letter-spacing: 0.12em;
-	text-transform: uppercase;
-	color: var(--ink-faint);
-	transition: color 0.2s ease;
-
-	&::before {
-		content: "←" / "";
-		transition: transform 0.2s ease;
-	}
-
-	&:hover {
-		color: var(--gold);
-
-		&::before {
-			transform: translateX(-3px);
-		}
-	}
+.gallery,
+.products {
+	padding-block: var(--section-pad);
+	border-top: 1px solid var(--line);
 }
 
 .eyebrow,
@@ -60,59 +28,103 @@
 	color: var(--gold);
 }
 
-.heroTitle {
-	font-size: clamp(44px, 7vw, 84px);
+.sectionTitle {
+	font-size: clamp(28px, 3.6vw, 40px);
 	font-weight: 300;
-	letter-spacing: 0.02em;
-	line-height: 1;
-	margin: 14px 0 20px;
+	margin-top: 12px;
 }
 
-.heroDesc {
-	max-width: 52ch;
-	font-size: 15px;
-	color: var(--ink-dim);
-	text-wrap: pretty;
-}
-
-.meta {
-	display: flex;
+.hero {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 70px;
 	align-items: center;
-	gap: 8px;
-	margin-top: 28px;
-	padding-top: 22px;
-	border-top: 1px solid var(--line);
-	font-size: 11px;
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
-	color: var(--ink-faint);
+	padding-block: clamp(48px, 7vw, 90px) var(--section-pad);
 
-	&::before {
-		content: "";
-		width: 26px;
-		height: 1px;
-		background: var(--gold-soft);
-	}
-}
+	& .backLink {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		margin-bottom: 26px;
+		font-size: 11px;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--ink-faint);
+		transition: color 0.2s ease;
 
-.heroImage {
-	position: relative;
-	aspect-ratio: 1;
-	overflow: hidden;
-	border: 1px solid var(--line);
+		&::before {
+			content: "←" / "";
+			transition: transform 0.2s ease;
+		}
 
-	& img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		filter: saturate(0.85) contrast(1.05);
+		&:hover {
+			color: var(--gold);
+
+			&::before {
+				transform: translateX(-3px);
+			}
+		}
 	}
 
-	&::after {
-		content: "";
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(150deg, color-mix(in srgb, var(--accent) 30%, transparent), transparent 62%);
+	& .heroTitle {
+		font-size: clamp(44px, 7vw, 84px);
+		font-weight: 300;
+		letter-spacing: 0.02em;
+		line-height: 1;
+		margin: 14px 0 20px;
+	}
+
+	& .heroDesc {
+		max-width: 52ch;
+		font-size: 15px;
+		color: var(--ink-dim);
+		text-wrap: pretty;
+	}
+
+	& .meta {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		margin-top: 28px;
+		padding-top: 22px;
+		border-top: 1px solid var(--line);
+		font-size: 11px;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--ink-faint);
+
+		&::before {
+			content: "";
+			width: 26px;
+			height: 1px;
+			background: var(--gold-soft);
+		}
+	}
+
+	& .heroImage {
+		position: relative;
+		aspect-ratio: 1;
+		overflow: hidden;
+		border: 1px solid var(--line);
+
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			filter: saturate(0.85) contrast(1.05);
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(150deg, color-mix(in srgb, var(--accent) 30%, transparent), transparent 62%);
+		}
+	}
+
+	@media (max-width: 860px) {
+		grid-template-columns: 1fr;
+		gap: 36px;
 	}
 }
 
@@ -130,18 +142,6 @@
 		color: var(--ink-dim);
 		text-wrap: pretty;
 	}
-}
-
-.sectionTitle {
-	font-size: clamp(28px, 3.6vw, 40px);
-	font-weight: 300;
-	margin-top: 12px;
-}
-
-.gallery,
-.products {
-	padding-block: var(--section-pad);
-	border-top: 1px solid var(--line);
 }
 
 .galleryStage {
@@ -166,10 +166,6 @@
 	background: var(--bg-deep);
 	transition: background-color 0.3s ease;
 
-	&:hover {
-		background: color-mix(in srgb, var(--accent) 8%, var(--bg-deep));
-	}
-
 	& h3 {
 		font-size: 15px;
 		font-weight: 400;
@@ -180,7 +176,11 @@
 		transition: color 0.2s ease;
 	}
 
-	&:hover h3 {
-		color: var(--ink);
+	&:hover {
+		background: color-mix(in srgb, var(--accent) 8%, var(--bg-deep));
+
+		& h3 {
+			color: var(--ink);
+		}
 	}
 }
