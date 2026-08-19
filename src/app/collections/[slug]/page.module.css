@@ -28,6 +28,10 @@
 	color: var(--gold);
 }
 
+.eyebrow {
+	color: color-mix(in srgb, var(--accent) 55%, var(--ink));
+}
+
 .sectionTitle {
 	font-size: clamp(28px, 3.6vw, 40px);
 	font-weight: 300;
@@ -97,7 +101,7 @@
 			content: "";
 			width: 26px;
 			height: 1px;
-			background: var(--gold-soft);
+			background: var(--accent);
 		}
 	}
 
