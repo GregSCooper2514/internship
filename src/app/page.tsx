@@ -53,14 +53,18 @@ function Intro() {
 
 function CollectionTile({ collection }: { collection: Collection }) {
 	return (
-		<article className={styles.collectionTile} style={{ "--accent": collection.accent } as CSSProperties}>
+		<Link
+			className={styles.collectionTile}
+			style={{ "--accent": collection.accent } as CSSProperties}
+			href={`/collections/${collection.slug}`}
+		>
 			<h3>{collection.name}</h3>
 			<p>{collection.tagline}</p>
 			<p>{collection.description}</p>
-			<Link className={styles.collectionLink} href={`/collections/${collection.slug}`}>
+			<span className={styles.collectionLink}>
 				Discover collection
-			</Link>
-		</article>
+			</span>
+		</Link>
 	);
 }
 

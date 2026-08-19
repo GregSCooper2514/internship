@@ -22,7 +22,7 @@ export default function Contact() {
 					<div className={styles.detailTile}>
 						<p className={styles.detailLabel}>Phone</p>
 						<a className={styles.detailValue} href="tel:+903123500303">
-							+90 312 350 03 03
+							+903123500303
 						</a>
 					</div>
 					<div className={styles.detailTile}>

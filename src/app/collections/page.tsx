@@ -10,22 +10,22 @@ function CollectionCard({ collection }: { collection: Collection }) {
 	const productCount: number = getProductsByCollection(collection.slug).length;
 
 	return (
-		<article className={styles.card} style={{ "--accent": collection.accent } as CSSProperties}>
-			<div className={styles.cardImage}>
-				<Image src={collection.heroImage} alt={`${collection.name} - Hero Image`} width={400} height={400} />
-			</div>
-			<div className={styles.cardBody}>
-				<p className={styles.count}>
-					{productCount} {productCount === 1 ? "product" : "products"}
-				</p>
-				<h2>{collection.name}</h2>
-				<p className={styles.tagline}>{collection.tagline}</p>
-				<p className={styles.description}>{collection.description}</p>
-				<Link className={styles.cardLink} href={`/collections/${collection.slug}`}>
-					View Collection
-				</Link>
-			</div>
-		</article>
+		<Link className={styles.cardAnchor} href={`/collections/${collection.slug}`}>
+			<article className={styles.card} style={{ "--accent": collection.accent } as CSSProperties}>
+				<div className={styles.cardImage}>
+					<Image src={collection.heroImage} alt={`${collection.name} - Hero Image`} width={400} height={400} />
+				</div>
+				<div className={styles.cardBody}>
+					<p className={styles.count}>
+						{productCount} {productCount === 1 ? "product" : "products"}
+					</p>
+					<h2>{collection.name}</h2>
+					<p className={styles.tagline}>{collection.tagline}</p>
+					<p className={styles.description}>{collection.description}</p>
+					<span className={styles.cardLink}>View Collection</span>
+				</div>
+			</article>
+		</Link>
 	);
 }
 

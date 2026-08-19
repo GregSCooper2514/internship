@@ -54,6 +54,12 @@
 	border-block: 1px solid var(--line);
 }
 
+.cardAnchor {
+	display: block;
+	color: inherit;
+	text-decoration: none;
+}
+
 .card {
 	--accent: #8f8878;
 
