@@ -16,7 +16,6 @@
 	position: relative;
 	display: flex;
 	align-items: center;
-	min-height: calc(100vh - var(--header-h));
 	min-height: calc(100svh - var(--header-h));
 	padding-block: clamp(56px, 10vh, 110px) 60px;
 

@@ -61,9 +61,7 @@ function CollectionTile({ collection }: { collection: Collection }) {
 			<h3>{collection.name}</h3>
 			<p>{collection.tagline}</p>
 			<p>{collection.description}</p>
-			<span className={styles.collectionLink}>
-				Discover collection
-			</span>
+			<span className={styles.collectionLink}>Discover collection</span>
 		</Link>
 	);
 }
