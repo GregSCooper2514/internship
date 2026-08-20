@@ -4,7 +4,7 @@ import { site } from "@/data/site";
 
 export const dynamic = "force-static";
 
-const absolute = (path: string) => new URL(path, site.url).toString();
+const absolute = (path: string) => (path === "/" ? site.url : new URL(path, site.url).toString());
 
 const lastModified = new Date();
 

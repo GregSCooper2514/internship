@@ -41,10 +41,6 @@ export const metadata: Metadata = {
 		description: site.description,
 		images: [catalogueCover.url],
 	},
-	robots: {
-		index: true,
-		follow: true,
-	},
 };
 
 export const viewport: Viewport = {

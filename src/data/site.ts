@@ -6,7 +6,7 @@ export const site = {
 	title: "Origami — A new perspective on luxury",
 	description:
 		"The Origami 2018 catalogue: six furniture collections pairing uncompromising craftsmanship with bold colour, natural materials and a sense of play.",
-	url: "https://www.origamimobilya.com",
+	url: "https://www.origami2018.gregcooper.dpdns.org",
 	locale: "en_GB",
 } as const;
 
