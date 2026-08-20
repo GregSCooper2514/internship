@@ -1,10 +1,22 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { getCollections } from "@/data/collections";
 import { getProductsByCollection } from "@/data/products";
+import { pageMetadata } from "@/data/site";
 import type { Collection } from "@/data/types";
 import styles from "./page.module.css";
+
+const catalogue = getCollections();
+
+export const metadata: Metadata = pageMetadata({
+	title: "Collections",
+	description: `All ${catalogue.length} collections from the Origami 2018 catalogue: ${catalogue
+		.map((collection) => collection.name)
+		.join(", ")}.`,
+	path: "/collections",
+});
 
 function CollectionCard({ collection }: { collection: Collection }) {
 	const productCount: number = getProductsByCollection(collection.slug).length;

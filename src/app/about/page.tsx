@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import { pageMetadata } from "@/data/site";
 import styles from "./page.module.css";
+
+export const metadata: Metadata = pageMetadata({
+	title: "About the Catalogue",
+	description:
+		"The story behind the Origami 2018 catalogue — the theme that shaped it, the furniture-making heritage behind the brand, and the vision and mission that guide its designs.",
+	path: "/about",
+});
 
 export default function About() {
 	return (

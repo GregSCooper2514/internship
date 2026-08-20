@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -5,8 +6,33 @@ import type { CSSProperties } from "react";
 import { Carousel } from "@/components/carousel";
 import { getCollection, getCollections } from "@/data/collections";
 import { getProductsByCollection } from "@/data/products";
+import { cataloguePageSize, pageMetadata, site } from "@/data/site";
 import type { Collection, Product } from "@/data/types";
 import styles from "./page.module.css";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+	const { slug } = await params;
+	const collection = getCollection(slug);
+
+	if (!collection) {
+		return {
+			title: "Collection not found",
+			description: `This collection is not part of the ${site.name} 2018 catalogue.`,
+			robots: { index: false, follow: false },
+		};
+	}
+
+	return pageMetadata({
+		title: collection.name,
+		description: collection.description,
+		path: `/collections/${collection.slug}`,
+		image: {
+			url: collection.heroImage,
+			...cataloguePageSize,
+			alt: `${collection.name} — ${site.name} 2018 catalogue`,
+		},
+	});
+}
 
 export async function generateStaticParams() {
 	const collections = getCollections();

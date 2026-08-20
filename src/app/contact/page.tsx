@@ -1,5 +1,16 @@
+import type { Metadata } from "next";
 import { Showrooms } from "@/components/showrooms";
+import { getShowrooms } from "@/data/showrooms";
+import { pageMetadata } from "@/data/site";
 import styles from "./page.module.css";
+
+export const metadata: Metadata = pageMetadata({
+	title: "Contact",
+	description: `Reach Origami by phone or email, or visit a showroom: ${getShowrooms()
+		.map((showroom) => `${showroom.city} (${showroom.location})`)
+		.join(", ")}.`,
+	path: "/contact",
+});
 
 export default function Contact() {
 	return (

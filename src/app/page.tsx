@@ -1,10 +1,19 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { Showrooms } from "@/components/showrooms";
 import { getCollections } from "@/data/collections";
+import { pageMetadata, site } from "@/data/site";
 import type { Collection } from "@/data/types";
 import styles from "./page.module.css";
+
+export const metadata: Metadata = pageMetadata({
+	title: site.title,
+	exactTitle: true,
+	description: site.description,
+	path: "/",
+});
 
 function Hero() {
 	return (
